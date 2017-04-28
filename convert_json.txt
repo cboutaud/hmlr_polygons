@@ -1,0 +1,11 @@
+To convert the gml to GeoJSON.
+
+Create a folder called geojsonfiles in your working directory.
+
+Then open terminal and change directory (cd) to your working directory and run the following command.
+
+for f in gmlfiles/*.gml; do newf=`echo | basename $f | sed "s/.gml/.json/"`; ogr2ogr -f "GeoJSON" geojsonfiles/${newf} ${f}; done
+
+If the following error message keeps popping up don’t worry the files will be fine.
+
+ERROR 1: Failed connect to 192.168.4.19:8181; Operation timed out
